@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-100: 231, 41, 41;
+    --color-primary-200: 220, 0, 0;
+    --color-primary-300: 160, 21, 62;
+    --color-primary-400: 137, 137, 138;
+    --color-background: 58, 0, 31;
+    --color-dark: 112, 0, 0;
+    --color-text: 237, 233, 203;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-2 rounded-2xl duration-200;
+  }
+
+  .btn--primary {
+    @apply px-6 h-12 bg-gradient-to-l from-primary-100 to-primary-300 text-textcolor text-sm hover:scale-95 outline-8 hover:outline-primary-100/30 outline outline-transparent;
+  }
+
+  .btn--outline-circle {
+    @apply w-10 h-10 rounded-full border border-primary-300 text-primary-300 hover:bg-primary-300 hover:text-textcolor;
+  }
+
+  .title-box {
+    @apply drop-shadow-[0_0px_13px_rgba(220,0,0,0.5)] bg-gradient-to-r inline-block bg-clip-text text-transparent from-primary-100 to-primary-300 text-3xl font-extrabold  text-center;
+  }
+
+  .input__textField {
+    @apply w-full !border !border-primary-300 bg-slate-900 px-4 h-10 rounded-lg text-sm placeholder-primary-400 text-textcolor !ring-0 focus:!outline-offset-0 focus:!outline-none focus:!outline-2 focus:!outline-primary-200 !appearance-none;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--kalameh-font);
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(137, 137, 138, 0.2);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(231, 41, 41, 0.4);
+  border-radius: 3px;
+}
